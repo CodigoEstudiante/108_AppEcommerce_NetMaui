@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ecommerce.Views.DireccionPage"
+             Title="DireccionPage"
+             
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             >
+
+    <StackLayout Orientation="Vertical" Spacing="10">
+        <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="GhostWhite" >
+            <ImageButton Source="back_icon" CornerRadius="10" BackgroundColor="White" HeightRequest="40"  VerticalOptions="Center"
+                         WidthRequest="40" Padding="5"  Command="{Binding GetBackEventCommand}"/>
+            
+            <Label Text="Nueva Dirección" FontSize="Subtitle" VerticalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Orientation="Vertical" Spacing="10" Padding="15">
+
+            <Entry Placeholder="Nombre de direccion" Text="{Binding NombreDireccion}"/>
+            <Entry Placeholder="Nombre completo"  Text="{Binding NombreCompleto}"/>
+            <Entry Placeholder="Calle" Text="{Binding Calle}"/>
+            <Entry Placeholder="Telefono" Text="{Binding Telefono}"/>
+            <Grid Margin="0,0,0,15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" VerticalOptions="Center">
+                    <Entry  Placeholder="Estado" Text="{Binding Estado}"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                    <Entry Placeholder="Ciudad" Text="{Binding Ciudad}"/>
+                </StackLayout>
+
+            </Grid>
+            <Button Text="Guardar" Command="{Binding GuardarEventCommand}"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

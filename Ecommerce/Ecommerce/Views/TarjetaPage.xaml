@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ecommerce.Views.TarjetaPage"
+             Title="TarjetaPage"
+             
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             >
+
+    <StackLayout Orientation="Vertical" Spacing="10">
+        <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="GhostWhite" >
+            <ImageButton Source="back_icon" CornerRadius="10" BackgroundColor="White" HeightRequest="40"  VerticalOptions="Center"
+                         WidthRequest="40" Padding="5"  Command="{Binding GetBackEventCommand}"/>
+
+            <Label Text="Nueva Tarjeta" FontSize="Subtitle" VerticalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Orientation="Vertical" Spacing="10" Padding="15">
+
+            <Entry Placeholder="Nombre de tarjeta" Text="{Binding NombreTarjeta}"/>
+            <Entry Placeholder="Número de tarjeta"  Text="{Binding NumeroTarjeta}"/>
+            
+            <Grid Margin="0,0,0,15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" VerticalOptions="Center">
+                    <Entry  Placeholder="Mes" Text="{Binding Mes}"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                    <Label Text="/" FontSize="Title" FontAttributes="Bold"/>
+                </StackLayout>
+                <StackLayout Grid.Column="2" VerticalOptions="Center">
+                    <Entry Placeholder="Año" Text="{Binding Anio}"/>
+                </StackLayout>
+                <StackLayout Grid.Column="4" VerticalOptions="Center">
+                    <Entry Placeholder="CVV" Text="{Binding Cvv}"/>
+                </StackLayout>
+
+            </Grid>
+            <Button Text="Guardar" Command="{Binding GuardarEventCommand}"/>
+        </StackLayout>
+
+    </StackLayout>
+
+
+</ContentPage>

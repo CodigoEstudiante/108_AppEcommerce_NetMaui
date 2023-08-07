@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ecommerce.Views.PerfilPage"
+             Title="Mi Perfil">
+
+
+
+    <Grid RowSpacing="10" Padding="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="1" HeightRequest="100" WidthRequest="100" Source="foto_perfil.JPG" HorizontalOptions="Center" />
+        <Label Grid.Row="2" Text="Jhon Smith" FontSize="Title" FontAttributes="Bold" HorizontalOptions="Center"  />
+        <StackLayout Grid.Row="3" Grid.RowSpan="3" Orientation="Vertical" Spacing="10">
+            
+            <Frame Padding="10">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Mis Compras" FontSize="Subtitle" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    <Image Source="card_icon.svg" HorizontalOptions="EndAndExpand" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" />
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding IrMisComprasCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            
+            <Border HorizontalOptions="FillAndExpand" Stroke="#dadada"></Border>
+            
+            <Frame Padding="10">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Cerrar Sesión" FontSize="Subtitle" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    <Image Source="logout_icon.svg" HorizontalOptions="EndAndExpand" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" />
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CerrarSesionCommand}"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            
+
+        </StackLayout>
+    </Grid>
+</ContentPage>

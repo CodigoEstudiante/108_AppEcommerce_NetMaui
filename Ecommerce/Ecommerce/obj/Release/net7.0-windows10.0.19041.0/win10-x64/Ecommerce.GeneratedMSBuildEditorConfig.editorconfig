@@ -1,0 +1,101 @@
+is_global = true
+build_property.TargetFramework = net7.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Ecommerce
+build_property.ProjectDir = E:\WorkSpaceAD\YOUTUBE\108_APP VENTA NET MAUI\Prueba\Ecommerce\Ecommerce\
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Views/CarritoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Views.CarritoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CarritoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CarritoPage.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Views/CompraExitosaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Views.CompraExitosaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CompraExitosaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CompraExitosaPage.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Views/DetalleCompraPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Views.DetalleCompraPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DetalleCompraPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DetalleCompraPage.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Views/DetalleProducto.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Views.DetalleProducto.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DetalleProducto.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DetalleProducto.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Views/DireccionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Views.DireccionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DireccionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DireccionPage.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Views/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Views/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Views.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MainPage.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Views/MisComprasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Views.MisComprasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MisComprasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MisComprasPage.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Views/PerfilPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Views.PerfilPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PerfilPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PerfilPage.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Views/ProductoCategoriaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Views.ProductoCategoriaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ProductoCategoriaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ProductoCategoriaPage.xaml
+
+[E:/WorkSpaceAD/YOUTUBE/108_APP VENTA NET MAUI/Prueba/Ecommerce/Ecommerce/Views/TarjetaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Ecommerce.Views.TarjetaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\TarjetaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\TarjetaPage.xaml

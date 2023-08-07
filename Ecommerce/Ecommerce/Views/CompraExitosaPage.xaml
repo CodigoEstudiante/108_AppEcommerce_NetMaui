@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ecommerce.Views.CompraExitosaPage"
+             Title="CompraExitosaPage"
+             BackgroundColor="FloralWhite"
+             
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             >
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="1"  HeightRequest="60" WidthRequest="60" Aspect="AspectFill"  Source="success.png"/>
+        <Label Grid.Row="2" Text="Tu compra ha sido exitosa!" Margin="0,15" HorizontalOptions="Center" FontSize="Title"/>
+        <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,20">
+            <Label Text="Numero de compra:" FontSize="Subtitle"/>
+            <Label Text="{Binding NumeroCompra}" FontSize="Subtitle"/>
+        </StackLayout>
+        <!--<Button Grid.Row="4" Text="Ver mis compras" Margin="10,15" BackgroundColor="#3E8EED" />-->
+        <Button Grid.Row="5" Text="Volver a bolsa" Margin="10,15" Command="{Binding VolverBolsaCommand}"/>
+    </Grid>
+</ContentPage>

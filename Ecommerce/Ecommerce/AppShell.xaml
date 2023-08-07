@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Ecommerce.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Ecommerce"
+    xmlns:views="clr-namespace:Ecommerce.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+
+
+    <FlyoutItem Title="Configuracion">
+        <Tab Title="Inicio"  Icon="home_icon">
+            <ShellContent
+                Title="Inicio"
+                ContentTemplate="{DataTemplate views:MainPage}"
+                Route="MainPage" />
+        </Tab>
+        <Tab Title="Bolsa"  Icon="bag_icon">
+            <ShellContent
+                Title="Bolsa"
+                ContentTemplate="{DataTemplate views:CarritoPage}"
+                Route="CarritoPage" />
+        </Tab>
+        <Tab Title="Perfil"  Icon="profile_icon">
+            <ShellContent
+                Title="Mi Perfil"
+                ContentTemplate="{DataTemplate views:PerfilPage}"
+                Route="PerfilPage" />
+        </Tab>
+    </FlyoutItem>
+
+</Shell>

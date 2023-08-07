@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ecommerce.Views.DetalleProducto"
+             Title="Detalle Producto"
+             Shell.TabBarIsVisible="False"
+             >
+
+    <ScrollView>
+        <Grid Margin="20" RowSpacing="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Aspect="Fill" HeightRequest="280" Source="{Binding Producto.Imagen}"/>
+
+            <VerticalStackLayout Grid.Row="1" Spacing="10">
+                <Label Text="{Binding Producto.Nombre}" FontSize="Subtitle" FontAttributes="Bold"/>
+                <Label Text="{Binding Producto.Precio, StringFormat='{0:C}'}" FontSize="Subtitle" TextColor="#1d94ab"/>
+                <Border HorizontalOptions="FillAndExpand" Stroke="#dadada"></Border>
+
+                <Label Text="{Binding Producto.Descripcion}" FontSize="Subtitle" />
+
+                <Border HorizontalOptions="FillAndExpand" Stroke="#dadada"></Border>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Categoria: " FontSize="Subtitle"/>
+                    <Label Text="{Binding Producto.RefCategoria.Descripcion}" HorizontalOptions="EndAndExpand" FontSize="Subtitle"/>
+                </StackLayout>
+
+            </VerticalStackLayout>
+            
+            <StackLayout Grid.Row="2" Orientation="Horizontal">
+                <Border HorizontalOptions="Start" Stroke="#512BD4" StrokeThickness="3">
+                    <Grid WidthRequest="130">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Text="-" CornerRadius="0" FontAttributes="Bold" Command="{Binding RestarEventCommand}" ></Button>
+                        <Label Grid.Column="1" Text="{Binding Cantidad}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"  />
+                        <Button Grid.Column="2" Text="+" CornerRadius="0" FontAttributes="Bold"  Command="{Binding SumarEventCommand}" ></Button>
+                    </Grid>
+
+                </Border>
+                <Button Text="Agregar" HorizontalOptions="EndAndExpand" BackgroundColor="#3E8EED" WidthRequest="150" Command="{Binding AgregarEventCommand}"></Button>
+
+            </StackLayout>
+        </Grid>
+
+
+        
+    </ScrollView>
+</ContentPage>

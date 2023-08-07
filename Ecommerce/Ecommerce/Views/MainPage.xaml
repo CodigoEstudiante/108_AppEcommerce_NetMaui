@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:model="clr-namespace:Ecommerce.DTOs"
+
+             
+             x:Class="Ecommerce.Views.MainPage">
+
+    <ScrollView>
+        <Grid Margin="20" RowSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Label Grid.Row="0" Text="Bienvenido!!" FontSize="Title" FontAttributes="Bold"/>
+
+            <VerticalStackLayout Grid.Row="1" Spacing="10">
+                <Label Text="Aprovecha nuestros productos" FontSize="Subtitle"/>
+                <Image  HeightRequest="200" Aspect="AspectFill"  Source="banner.jpg"/>
+                
+            </VerticalStackLayout>
+            
+
+            <VerticalStackLayout Grid.Row="2" Spacing="15">
+
+                <Label Text="Categorias" FontSize="Large"/>
+                
+
+                <CollectionView SelectionMode="Single" HeightRequest="50" BackgroundColor="White" ItemsSource="{Binding Categorias}"
+                                SelectedItem="{Binding CategoriaSeleccionada}"
+                                SelectionChangedCommand="{Binding CategoriaEventSelectedCommand}"
+                                >
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:CategoriaDTO">
+                            <Border Padding="16,8" HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10,10,10,10"/>
+                                </Border.StrokeShape>
+
+                                <HorizontalStackLayout Spacing="5" HeightRequest="25">
+                                    <Image Aspect="AspectFit" HeightRequest="25" WidthRequest="25" Source="{Binding Imagen}"/>
+                                    <Label VerticalOptions="Center" FontSize="Medium" Text="{Binding Descripcion}"/>
+                                </HorizontalStackLayout>
+
+
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="3" Spacing="15">
+                <Label Text="Mejores Productos" FontSize="Large"/>
+                <CollectionView HeightRequest="320" SelectionMode="Single" ItemsSource="{Binding MejoresProductos}"
+                                SelectedItem="{Binding ProductoSeleccionado}" SelectionChangedCommand="{Binding ProductoEventSelectedCommand}"
+                                >
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:ProductoDTO">
+                            <Border Padding="15" HorizontalOptions="Center" WidthRequest="280">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10,10,10,10"/>
+                                </Border.StrokeShape>
+
+                                <Grid RowSpacing="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.Row="0" Aspect="Fill" Source="{Binding Imagen}" WidthRequest="250" HeightRequest="200"/>
+                                    <Label Grid.Row="1" Text="{Binding Nombre}" FontSize="Subtitle"/>
+                                    <Label Grid.Row="3" Text="{Binding Precio, StringFormat='{0:C}'}" FontSize="Subtitle" TextColor="#1d94ab"/>
+
+                                </Grid>
+
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </VerticalStackLayout>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

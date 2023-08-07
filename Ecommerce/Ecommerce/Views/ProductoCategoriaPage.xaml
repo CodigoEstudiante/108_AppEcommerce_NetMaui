@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Ecommerce.DTOs"
+             
+             x:Class="Ecommerce.Views.ProductoCategoriaPage"
+             Title="Detalle Categoria"
+             Shell.TabBarIsVisible="False"
+             >
+
+    <Grid Margin="10,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="{Binding NombreCategoria}" FontSize="Large" Margin="15"/>
+        
+        <ScrollView Grid.Row="1">
+
+                <CollectionView SelectionMode="Single" ItemsSource="{Binding Productos}"
+                                SelectedItem="{Binding ProductoSeleccionado}" 
+                                SelectionChangedCommand="{Binding ProductoEventSelectedCommand}"
+                                >
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" Span="2"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:ProductoDTO">
+                            <Border Padding="15" HorizontalOptions="Center" >
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10,10,10,10"/>
+                                </Border.StrokeShape>
+
+                                <Grid RowSpacing="5" WidthRequest="145">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.Row="0" Aspect="Fill" Source="{Binding Imagen}"  HeightRequest="115"/>
+                                    <Label Grid.Row="1" Text="{Binding Nombre}" FontSize="Subtitle"/>
+                                    <Label Grid.Row="3" Text="{Binding Precio, StringFormat='{0:C}'}" FontSize="Subtitle" TextColor="#1d94ab"/>
+                                </Grid>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+  
+        </ScrollView>
+    </Grid>
+    
+    
+    
+    
+</ContentPage>

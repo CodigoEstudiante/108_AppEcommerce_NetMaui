@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ecommerce.Views.MisComprasPage"
+             
+             xmlns:model="clr-namespace:Ecommerce.DTOs"
+             Title=""
+               Shell.TabBarIsVisible="False"
+             >
+    <Grid Margin="10,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="Mis Compras" FontSize="Large" Margin="15"/>
+
+        <ScrollView Grid.Row="1">
+
+            <CollectionView SelectionMode="Single" ItemsSource="{Binding ListaCompras}" HorizontalOptions="FillAndExpand">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:CompraDTO">
+
+                        <Frame HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Vertical" Spacing="5">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Numero de compra:" FontSize="Subtitle" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding NumeroCompra}" FontSize="Subtitle" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                                <Border HorizontalOptions="FillAndExpand" Stroke="#dadada"></Border>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Enviado a:" FontSize="Subtitle"  HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding RefDireccion.NombreDireccion}" FontSize="Subtitle" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Pagado con:" FontSize="Subtitle" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding RefTarjeta.NombreTarjeta}" FontSize="Subtitle" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                                <Border HorizontalOptions="FillAndExpand" Stroke="#dadada"></Border>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding FechaRegistro}" FontSize="Subtitle" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="Total:" FontSize="Subtitle" FontAttributes="Bold" HorizontalOptions="EndAndExpand"/>
+                                    <Label Text="{Binding Total,StringFormat='{0:C}'}" FontSize="Subtitle" FontAttributes="Bold" HorizontalOptions="EndAndExpand" TextColor="#1d94ab"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </ScrollView>
+    </Grid>
+
+
+
+</ContentPage>

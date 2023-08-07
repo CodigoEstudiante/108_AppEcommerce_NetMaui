@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Ecommerce.DTOs"
+             x:Class="Ecommerce.Views.DetalleCompraPage"
+             Title=""
+             Shell.TabBarIsVisible="False"
+             >
+    <StackLayout Orientation="Vertical" Spacing="10" Padding="15">
+        <Label Text="Detalle de pago" FontSize="Title" FontAttributes="Bold"/>
+        <Label Text="Acontinuación debe seleccionar la dirección de envio y la tarjeta de pago. Proximamente retiros en tienda" TextColor="SlateGray" FontSize="Small"/>
+        <Border HorizontalOptions="FillAndExpand" Stroke="#dadada"></Border>
+        
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <ImageButton Source="location_icon.svg" BackgroundColor="White" HeightRequest="20"  VerticalOptions="Center" WidthRequest="20"  />
+            <Label Text="Mis direcciones" FontAttributes="Bold" FontSize="Subtitle" VerticalOptions="Center"/>
+            <Label Text="Agregar" TextColor="DodgerBlue" HorizontalOptions="EndAndExpand" Margin="4">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding IrDireccionEventCommand }"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+
+        <CollectionView SelectionMode="Single" HeightRequest="50" BackgroundColor="White" ItemsSource="{Binding ListaDirecciones}"
+                                SelectedItem="{Binding DireccionSeleccionada}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:DireccionDTO">
+                    <Border Padding="16,8" HorizontalOptions="Center" WidthRequest="180">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10,10,10,10"/>
+                        </Border.StrokeShape>
+                        <StackLayout Orientation="Horizontal" Spacing="5" >
+                            <Label FontSize="Medium" Text="{Binding NombreDireccion}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="X" TextColor="Black" VerticalOptions="Center" HorizontalOptions="EndAndExpand" 
+                                   BackgroundColor="LightGray" Padding="10,5" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.EliminarDireccionEventCommand, Source={x:RelativeSource AncestorType={x:Type ContentPage}}}"
+                                                    CommandParameter="{Binding}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+        <Border HorizontalOptions="FillAndExpand" Stroke="#dadada"></Border>
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <ImageButton Source="card_icon.svg" BackgroundColor="White" HeightRequest="20"  VerticalOptions="Center" WidthRequest="20"  />
+            <Label Text="Mis tarjetas" FontAttributes="Bold" FontSize="Subtitle" VerticalOptions="Center"/>
+            <Label Text="Agregar" TextColor="DodgerBlue" HorizontalOptions="EndAndExpand" Margin="4">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding IrTarjetaEventCommand }"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+        <CollectionView SelectionMode="Single" HeightRequest="50" BackgroundColor="White" ItemsSource="{Binding ListaTarjetas}"
+                                SelectedItem="{Binding TarjetaSeleccionada}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:TarjetaDTO">
+                    <Border Padding="16,8" HorizontalOptions="Center" WidthRequest="180">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10,10,10,10"/>
+                        </Border.StrokeShape>
+                        <StackLayout Orientation="Horizontal" Spacing="5" >
+                            <Label FontSize="Medium" Text="{Binding NombreTarjeta}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="X" TextColor="Black" VerticalOptions="Center" HorizontalOptions="EndAndExpand" 
+                                   BackgroundColor="LightGray" Padding="10,5" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.EliminarTarjetaEventCommand, Source={x:RelativeSource AncestorType={x:Type ContentPage}}}"
+                                                    CommandParameter="{Binding}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+
+        <Border HorizontalOptions="FillAndExpand" Stroke="#dadada"></Border>
+        <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
+            <Label Text="Total" FontSize="Subtitle" FontAttributes="Bold"/>
+            <Label Text="{Binding TotalCompra, StringFormat='{0:C}'}" FontSize="Subtitle" FontAttributes="Bold" HorizontalOptions="EndAndExpand" TextColor="#1d94ab"/>
+        </StackLayout>
+        <Button Text="Realizar compra" Command="{Binding RealizarCompraEventCommand}"/>
+    </StackLayout>
+</ContentPage>
